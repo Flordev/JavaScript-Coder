@@ -1,51 +1,61 @@
-// Clase Producto
-class Producto {
-    constructor(nombre, precio) {
-        this.nombre = nombre;
-        this.precio = precio;
+// Variables
+let nombreUsuario;
+let totalCompra = 0;
+let descuento = 0;
+
+// Array de productos (nombre y precio)
+let productos = [
+    { nombre: "Anillo", precio: 1000 },
+    { nombre: "Collar", precio: 2000 },
+    { nombre: "Pulsera", precio: 1500 }
+];
+
+// Función para capturar nombre de usuario
+function capturarNombre() {
+    nombreUsuario = prompt("Por favor, ingresa tu nombre:");
+}
+
+// Función para seleccionar productos
+function seleccionarProductos() {
+    let eleccion = prompt("Elige un producto: 1. Anillo, 2. Collar, 3. Pulsera");
+    let productoSeleccionado = productos[parseInt(eleccion) - 1];
+
+    if (productoSeleccionado) {
+        totalCompra += productoSeleccionado.precio;
+        alert(`Has agregado ${productoSeleccionado.nombre} a tu compra. Total hasta ahora: $${totalCompra}`);
+    } else {
+        alert("Producto no válido.");
     }
 }
 
-// Función para iniciar el simulador
-function iniciarSimulador() {
-    alert("¡Bienvenido al Simulador de Costos Totales!");
-
-    let numeroProductos = parseInt(prompt("¿Cuántos productos deseas calcular?"));
-
-    if (isNaN(numeroProductos) || numeroProductos <= 0) {
-        alert("Por favor, ingresa un número válido de productos.");
-        return;
+// Función para aplicar descuento
+function aplicarDescuento() {
+    let tieneDescuento = prompt("¿Tienes un código de descuento? (si/no)");
+    
+    if (tieneDescuento.toLowerCase() === "si") {
+        descuento = parseInt(prompt("Ingresa el porcentaje de descuento (solo el número):"));
+        totalCompra -= (totalCompra * descuento / 100);
+        alert(`Se ha aplicado un descuento del ${descuento}%. Total final: $${totalCompra}`);
+    } else {
+        alert("No se aplicó ningún descuento.");
     }
-
-    let total = calcularTotal(numeroProductos);
-    mostrarResultado(total);
 }
 
-// Función para calcular el total usando un ciclo y clases
-function calcularTotal(cantidad) {
-    let suma = 0;
-    let productos = [];
-
-    for (let i = 1; i <= cantidad; i++) {
-        let nombre = prompt(`Ingresa el nombre del producto ${i}:`);
-        let precio = parseFloat(prompt(`Ingresa el precio del producto ${i}:`));
-
-        if (isNaN(precio) || precio < 0) {
-            alert("Precio inválido. Por favor, ingresa un número positivo.");
-            i--;
-            continue;
-        }
-
-        let producto = new Producto(nombre, precio);
-        productos.push(producto);
-        suma += producto.precio;
+// Función principal para ejecutar el simulador
+function ejecutarSimulador() {
+    capturarNombre();
+    
+    let continuarComprando = true;
+    
+    while (continuarComprando) {
+        seleccionarProductos();
+        continuarComprando = prompt("¿Deseas agregar otro producto? (si/no)").toLowerCase() === "si";
     }
-
-    console.log(productos); // Para ver los productos en la consola
-    return suma;
+    
+    aplicarDescuento();
+    
+    alert(`${nombreUsuario}, el total de tu compra es: $${totalCompra}`);
 }
 
-// Función para mostrar el resultado
-function mostrarResultado(total) {
-    alert(`El costo total de los productos es: $${total.toFixed(2)}`);
-}
+// Asignar la función al botón
+document.getElementById("iniciarSimulador").onclick = ejecutarSimulador;

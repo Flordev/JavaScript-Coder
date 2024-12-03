@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Compras</title>
-    <link rel="stylesheet" href="style.css">
+    <title>LUXURY ROOM</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Simulador de Compras</h1>
+        <div class="logo">
+            <h1>LUXURY ROOM</h1>
+        </div>
+        <div class="search-bar">
+            <select id="ordenarPrecios">
+                <option value="default">Ordenar por:</option>
+                <option value="asc">Precio: Menor a Mayor</option>
+                <option value="desc">Precio: Mayor a Menor</option>
+            </select>
+        </div>
+        <div class="cart-icon">
+            <button id="toggleCart">🛒</button>
+        </div>
     </header>
+
+    <!-- Main content -->
     <main>
-        <section id="simulador">
-            <p>Este simulador te permite calcular el total de tu compra con descuentos aplicados.</p>
-            <!-- Aquí está el botón para iniciar el simulador -->
-            <button id="iniciarSimulador">Iniciar Simulador</button>
-        </section>
+        <section id="productos"></section>
     </main>
-    <footer>
-        <p>PreEntrega2 - TuApellido</p>
-    </footer>
-    <script src="app.js"></script>
+
+     <!-- Sidebar (Carrito) -->
+     <div id="sidebar" class="sidebar">
+        <h2>Tus compras</h2> <!-- Título arriba -->
+        <button id="closeCart" class="close-btn">X</button>
+        <div id="carrito"></div>
+        <div id="total"></div>
+
+        <!-- Botón Finalizar compra -->
+        <button id="finalizarCompra" class="finalizar-compra-btn">Finalizar compra</button>
+    </div>
+
+     <!-- Mensaje emergente para notificación de producto agregado al carrito -->
+     <div id="mensaje" class="mensaje" style="display: none;">
+        <p id="mensaje-texto"></p>
+    </div>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>

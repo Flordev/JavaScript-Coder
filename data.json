@@ -1,0 +1,89 @@
+{
+    "products": [
+      {
+        "id": "car_alessia",
+        "name": "Alessia",
+        "type": "cartera",
+        "image": "assets/car_alessia.jpg",
+        "price": "12.000"
+      },
+      {
+        "id": "car_ava",
+        "name": "Ava",
+        "type": "cartera",
+        "image": "assets/car_ava.jpg",
+        "price": "15.000"
+      },
+      {
+        "id": "car_caterina",
+        "name": "Caterina",
+        "type": "cartera",
+        "image": "assets/car_caterina.jpg",
+        "price": "10.000"
+      },
+      {
+        "id": "car_cuore",
+        "name": "Cuore",
+        "type": "cartera",
+        "image": "assets/car_cuore.jpg",
+        "price": "12.000"
+      },
+      {
+        "id": "car_geneva",
+        "name": "Geneva",
+        "type": "cartera",
+        "image": "assets/car_geneva.jpg",
+        "price": "15.000"
+      },
+      {
+        "id": "car_posion",
+        "name": "Posion",
+        "type": "cartera",
+        "image": "assets/car_poison.jpg",
+        "price": "16.000"
+      },
+      {
+        "id": "car_scarlett",
+        "name": "Scarlett",
+        "type": "cartera",
+        "image": "assets/car_scarlett.jpg",
+        "price": "18.000"
+      },
+      {
+        "id": "car_shine",
+        "name": "Shine",
+        "type": "cartera",
+        "image": "assets/car_shine.jpg",
+        "price": "12.000"
+      },
+      {
+        "id": "car_taylor",
+        "name": "Taylor",
+        "type": "cartera",
+        "image": "assets/car_taylor.jpg",
+        "price": "14.000"
+      },
+      {
+        "id": "car_true",
+        "name": "True",
+        "type": "cartera",
+        "image": "assets/car_true.jpg",
+        "price": "12.000"
+      },
+      {
+        "id": "car_valencia",
+        "name": "Valencia",
+        "type": "cartera",
+        "image": "assets/car_valencia.jpg",
+        "price": "16.000"
+      },
+      {
+        "id": "tote_london",
+        "name": "London",
+        "type": "tote",
+        "image": "assets/tote_london.jpg",
+        "price": "20.000"
+      }
+    ]
+  }
+  
